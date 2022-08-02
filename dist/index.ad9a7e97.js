@@ -12,6 +12,9 @@ const MiniFramework = {
         return element;
     }
 };
+function _ref(key) {
+    return key !== "children";
+}
 const render = (frameworkEl, container)=>{
     if ([
         "string",
@@ -21,7 +24,7 @@ const render = (frameworkEl, container)=>{
         return;
     }
     const actualDOMElement = document.createElement(frameworkEl.tag); // Apply Props to actual DOM Element
-    Object.keys(frameworkEl?.props).filter((key)=>key !== "children").forEach((property)=>{
+    Object.keys(frameworkEl?.props).filter(_ref).forEach((property)=>{
         actualDOMElement[property] = frameworkEl.props[property];
     }); // Render children inside this element
     frameworkEl?.props?.children.forEach((child)=>{

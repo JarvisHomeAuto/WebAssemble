@@ -4,15 +4,6 @@
         "pragma": "MiniFramework.createElement", // default pragma is React.createElement
         "throwIfNamespace": false // defaults to true
       }],
-      "faster.js",
-      "closure-elimination",
-      [
-        "groundskeeper-willie",
-        {
-          "removeConsole": true,
-          "removeDebugger": true,
-          "removePragma": true
-        }
-      ]
+      "closure-elimination"
     ]
   }
