@@ -9,7 +9,10 @@
     "asbuild:debug": "asc assembly/index.ts --target debug",
     "asbuild:release": "asc assembly/index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "rust:build":"wasm-pack build rust/ --out-dir distDev/webassembly --debug",
+    "rust:buildFinal":"wasm-pack build rust/ --out-dir dist/webassembly --release",
+    "cpp:build":"emcc --bind -O3 src/cpp/main.cpp"
   },
   "keywords": [
     "web",
