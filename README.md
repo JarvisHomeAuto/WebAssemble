@@ -15,5 +15,7 @@ For the C/C++ webassembly compiler we use emscripten to compile C++ to WASM.
 - [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 ## AssemblyScript
 Assembly Script is built in with npm. Assembly Script is similiar to typescript, but compiles into webassembly.
+
+reference: https://web.dev/emscripten-npm/
  
 

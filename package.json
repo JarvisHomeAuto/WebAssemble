@@ -4,15 +4,20 @@
   "description": "A universal webassembly based front-end framework, with a virtual dom for JSX components.",
   "main": "index.js",
   "scripts": {
+    "install":"napa",
     "test": "node tests",
     "pack": "npx parcel index.html",
     "asbuild:debug": "asc assembly/index.ts --target debug",
     "asbuild:release": "asc assembly/index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
     "start": "npx serve .",
-    "rust:build":"wasm-pack build rust/ --out-dir distDev/webassembly --debug",
-    "rust:buildFinal":"wasm-pack build rust/ --out-dir dist/webassembly --release",
-    "cpp:build":"emcc --bind -O3 src/cpp/main.cpp"
+    "rust:build": "wasm-pack build rust/ --out-dir distDev/webassembly --debug",
+    "rust:buildFinal": "wasm-pack build rust/ --out-dir dist/webassembly --release",
+    "cpp:build": "emcc --bind -O3 src/cpp/main.cpp",
+    "build:emscripten:docker": "docker run --rm -v $(pwd):/src trzeci/emscripten ./build.sh"
+  },
+  "napa": {
+    "libvpx": "git+https://github.com/webmproject/libvpx"
   },
   "keywords": [
     "web",
@@ -36,6 +41,7 @@
     "babel-plugin-closure-elimination": "^1.3.2",
     "babel-plugin-groundskeeper-willie": "^2.0.0",
     "faster.js": "^1.1.1",
+    "napa": "^3.0.0",
     "parcel": "^2.6.2",
     "typescript": "^4.7.4"
   },
