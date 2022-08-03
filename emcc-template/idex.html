@@ -1,0 +1,11 @@
+<!doctype html>
+Open the console to see the output from the wasm module.
+<script type="module">
+import wasmModule from "./my-module.js";
+
+const instance = wasmModule({
+  onRuntimeInitialized() {
+    instance.sayHello();
+  }
+});
+</script>

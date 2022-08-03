@@ -1,0 +1,20 @@
+{
+    "name": "my-worldchanging-project",
+    "scripts": {
+      "kek": "echo hai",
+      "install": "napa",
+      "build:emscripten": "docker run --rm -v $(pwd):/src trzeci/emscripten ./build.sh",
+      "build:app": "cp index.html dist/index.html",
+      "build": "npm run build:emscripten && npm run build:app",
+      "serve": "http-server -c0 dist"
+    },
+    "devDependencies": {
+      "http-server": "*"
+    },
+    "dependencies": {
+      "napa": "^3.0.0"
+    },
+    "napa": {
+      "libvpx": "git+https://github.com/webmproject/libvpx"
+    }
+  }
